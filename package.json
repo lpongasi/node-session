@@ -1,0 +1,18 @@
+{
+  "name": "node-session",
+  "version": "1.0.0",
+  "description": "#### Installing  `npm i --save @types/es6-shim @types/node ts-node typescript` or  `yarn add @types/es6-shim @types/node ts-node typescript`",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-shim": "^0.31.37",
+    "@types/node": "^10.9.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  }
+}
