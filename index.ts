@@ -12,8 +12,15 @@ import command from './command';
 async function init() {
   try {
     await command('git fetch --all');
-    const { stdout } = await command('git rev-parse --abbrev-ref HEAD');
-    console.log('branch-name:', stdout);
+    const { stdout: branchName } = await command('git rev-parse --abbrev-ref HEAD');
+    await command('git add .');
+    await command('git commit -m "this is commit"');
+   
+    await command('git checkout develop');
+    await command('git pull --rebase');
+    await command(`git checkout ${branchName}`);
+    await command('git rebase develop');
+    console.log('branch-name:', branchName);
   } catch (e) {
     console.error('An error baby: ', e);
   }
